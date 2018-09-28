@@ -1,0 +1,32 @@
+{
+  "name": "hometogo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run web\" \"npm run rest\" ",
+    "web": "browser-sync start --server --files \"index.html\" \"styles.css\" \"js\" --no-inject-changes",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "rest": "json-server --watch --port 3010 db.json"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "concurrently": "^3.1.0",
+    "json-server": "^0.9.4",
+    "tslint": "^4.2.0",
+    "typescript": "^2.0.3",
+    "typings": "^2.1.0"
+  },
+  "dependencies": {
+    "@types/react-redux": "^6.0.9",
+    "bootstrap": "^4.1.3",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^5.0.7",
+    "react-thunk": "^1.0.0",
+    "redux": "^3.6.0",
+    "systemjs": "^0.19.38"
+  }
+}
